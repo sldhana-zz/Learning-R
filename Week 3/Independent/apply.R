@@ -119,7 +119,24 @@ sapply(temp, print_info)
 basics <- function(x){
   c(min=min(x), max=max(x), mean=mean(x))
 }
-vapply(temp, basics, numeric(3))
+vapply(temp, basics, numeric(3)) 
 
 # If we use 2 instead of 3, it throws an error
 vapply(temp, basics, numeric(2))
+
+#tapply
+data(iris)
+#get mean of sepal length
+mean(iris$Sepal.Length)
+
+#Now, we want to calculate the mean of the Sepal Length but broken by the Species, so we will use the tapply() function
+tapply(iris$Sepal.Length, iris$Species, mean)
+
+#Now, let us see another example, this time another inbuilt dataset from R , mtcars dataset
+data(mtcars)
+str(mtcars)
+
+#We are interested in seeing the avg mpg for the various transmission types and number of cylinders in car. This is nothing but avg mpg grouped by transmission type and the number of cylinders in car.
+tapply(mtcars$mpg, list(mtcars$cyl, mtcars$am), mean)
+
+
