@@ -38,8 +38,6 @@ Rprof(NULL)
 #When using `by.total' normalization, the top-level function (in this case, `lm()') always takes 100% of the time.
 #100%
 
-
-
 #When using 'system.time()', what is the user time?
 #It is the time spent by the CPU evaluating an expression
 
